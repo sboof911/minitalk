@@ -6,22 +6,26 @@
 #    By: amaach <amaach@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/08 15:38:30 by amaach            #+#    #+#              #
-#    Updated: 2021/06/08 16:41:55 by amaach           ###   ########.fr        #
+#    Updated: 2021/06/10 12:20:11 by amaach           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLAGS =  -Wall -Wextra -Werror
-NAME = client
-SRC =  client.c
+NAME1 = client
+NAME2 = server
+SRC1 =  client.c
+SRC2 = server.c
 LIB = libft/libft.a
 INCLUDES = libft
-OBJ = *.o
+OBJ =libft/*.o
 
-all:	$(NAME)
+all:	$(NAME1) $(NAME2)
 
-$(NAME) : $(SRC)
+$(NAME1) : $(SRC1)
 	make -C libft
-	gcc $(FLAGS) $(LIB) -I $(INCLUDES) $(SRC) -o $(NAME)
+	gcc $(FLAGS) $(LIB) -I $(INCLUDES) $(SRC1) -o $(NAME1)
+$(NAME2) : $(SRC2)	
+	gcc $(FLAGS) $(LIB) -I $(INCLUDES) $(SRC2) -o $(NAME2)
 
 bonus : $(SRC)
 
