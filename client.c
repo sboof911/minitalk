@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:32:41 by amaach            #+#    #+#             */
-/*   Updated: 2021/06/10 12:23:34 by amaach           ###   ########.fr       */
+/*   Updated: 2021/06/10 13:06:51 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int		main(int argc, char **argv)
 			else
 				kill(pid, SIGUSR2);
 			j++;
+			usleep(100);
 		}
 		i++;
 	}

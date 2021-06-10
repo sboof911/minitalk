@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:01:33 by amaach            #+#    #+#             */
-/*   Updated: 2021/06/10 12:30:47 by amaach           ###   ########.fr       */
+/*   Updated: 2021/06/10 13:37:40 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ char	*ft_strjoinc(char *str, char c)
 		s1[i] = str[i];
 		i++;
 	}
-	free(str);
+	if (str)
+		free(str);
 	s1[i] = c;
 	s1[i + 1] = '\0';
 	return (s1);
@@ -67,17 +68,33 @@ int		ft_bitoasc(char *str)
 
 void	ft_print(pid_t pid)
 {
+	static int	i = 0;
+	static char tmp[8];
+	
 	if (SIGUSR1 == pid)
-		ft_putchar_fd('1', 1);
+	{
+		tmp[i] = '0';
+		// ft_putchar_fd('0', 1);
+		i++;
+	}
 	else if (SIGUSR2 == pid)
-		ft_putchar_fd('0', 1);
+	{
+		tmp[i] = '1';
+		// ft_putchar_fd('1', 1);
+		i++;
+	}
+	if (i == 8)
+	{
+		printf("\n%s", tmp);
+		i = 0;
+	}
 }
 
 int		main()
 {
-	ft_putnbr_fd(getpid(), 1);
-	ft_putchar_fd('\n', 1);
 	signal(SIGUSR1, ft_print);
 	signal(SIGUSR2, ft_print);
+	ft_putnbr_fd(getpid(), 1);
+	ft_putchar_fd('\n', 1);
 	while (1);
 }
