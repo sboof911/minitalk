@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:32:35 by amaach            #+#    #+#             */
-/*   Updated: 2021/06/10 15:21:27 by amaach           ###   ########.fr       */
+/*   Updated: 2021/06/10 16:58:35 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 # include <signal.h>
 # include "libft/libft.h"
 # include <stdio.h>
+# include <stdlib.h>
 
 #endif

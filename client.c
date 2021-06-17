@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:32:41 by amaach            #+#    #+#             */
-/*   Updated: 2021/06/10 16:15:57 by amaach           ###   ########.fr       */
+/*   Updated: 2021/06/17 12:33:16 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ char	*ft_binaire(int n)
 	str = (char *)malloc(9);
 	if (!(str))
 		return (NULL);
-	while (i < 7)
-		str[i++] = '0';
-	str[i] = '\0';
+	while (i < 8)
+	{
+		str[i] = '0';
+		i++;
+	}
+	str[i--] = '\0';
 	while (i >= 0)
 	{
 		str[i] = n % 2 + 48;
@@ -73,7 +76,7 @@ void	ft_help(int compt, char **argv, int pid, char **tab)
 			else
 				kill(pid, SIGUSR2);
 			j++;
-			usleep(100);
+			usleep(50);
 		}
 	}
 }

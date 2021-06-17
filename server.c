@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:01:33 by amaach            #+#    #+#             */
-/*   Updated: 2021/06/10 15:49:45 by amaach           ###   ########.fr       */
+/*   Updated: 2021/06/17 11:57:40 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,5 @@ int	main(void)
 	ft_putnbr_fd(getpid(), 1);
 	ft_putchar_fd('\n', 1);
 	while (1)
-		(void)1;
+		pause();
 }
